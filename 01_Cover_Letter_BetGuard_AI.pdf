@@ -1,0 +1,40 @@
+BETGUARD AI TECHNOLOGIES
+Gaborone, Botswana
+Email: support@betguard.ai
+Website: www.betguard.ai
+
+September 16, 2026
+
+To:
+The Executive Leadership, Risk & Technology Committees
+Delta Bay (Pty) Ltd t/a Betway Botswana
+Plot 50637, Unit S13, Remmogo Crossing, Block 10
+Gaborone, Botswana
+
+SUBJECT: Formal Submission of Proposal & Architecture Specification: BetGuard AI Integration
+
+Dear Members of the Executive Leadership and Risk Committees,
+
+As mobile wagering and high-frequency digital betting continue to scale across Botswana, maintaining operational efficiency while safeguarding platform integrity against emerging risk vectors—such as multi-accounting syndicates, bonus arbitrage, and account takeovers (ATO)—is a critical business imperative.
+
+We are pleased to formally submit the enclosed technical proposal and architectural specification for BetGuard AI, an enterprise-grade, real-time risk scoring and compliance middleware built specifically for online gaming and sports betting operators.
+
+Engineered to sit seamlessly between your web/mobile edge applications and your core Player Account Management (PAM) system, BetGuard AI delivers automated sub-150ms decisioning. By combining configurable business logic with an XGBoost machine learning engine compiled to an ONNX runtime, the platform offers several key operational benefits to Betway Botswana:
+
+1. Automated Fraud Prevention: Instantly flags device reuse, syndicate registration patterns, and high-velocity withdrawal requests prior to payout execution.
+2. Low-Latency Performance: Delivers median inference execution times under 35ms, preserving a frictionless experience for legitimate players.
+3. Operational Efficiency: Reduces manual analyst review queue volume by up to 60%, allowing your fraud team to focus exclusively on high-priority investigations.
+4. Regulatory Compliance: Integrates localized velocity tracking and responsible gaming flags to support ongoing compliance with Gambling Authority mandates.
+
+The attached document package provides a comprehensive technical overview, including OpenAPI 3.0 REST/gRPC schemas, database models, ONNX runtime configurations, and Kubernetes deployment specifications.
+
+We kindly request that this proposal package be forwarded to your Risk, Fraud, Technology, or Partnerships teams. We welcome the opportunity to schedule a brief 20-minute technical demonstration with your engineering and compliance leads.
+
+Thank you for your time, consideration, and leadership.
+
+Sincerely,
+
+The BetGuard AI Engineering Team
+BetGuard AI Technologies
+Enclosures: 
+- BetGuard AI Executive Proposal & System Architecture Specification (PDF)

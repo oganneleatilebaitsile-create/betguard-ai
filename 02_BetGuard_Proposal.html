@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BetGuard AI - Executive Proposal & Technical Specification</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm 15mm 20mm 15mm;
+            @bottom-right {
+                content: "Page " counter(page) " of " counter(pages);
+                font-family: 'Segoe UI', Arial, sans-serif;
+                font-size: 9pt;
+                color: #718096;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-size: 10pt;
+            line-height: 1.5;
+            color: #2D3748;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3 {
+            color: #0F172A;
+            font-weight: 700;
+            margin-top: 0;
+            page-break-after: avoid;
+        }
+
+        h1 { font-size: 22pt; margin-bottom: 4px; }
+        h2 { font-size: 13pt; border-bottom: 2px solid #0052CC; padding-bottom: 4px; margin-top: 20px; margin-bottom: 10px; }
+        h3 { font-size: 10.5pt; margin-top: 14px; margin-bottom: 6px; color: #1E293B; }
+
+        p { margin-top: 0; margin-bottom: 10px; }
+
+        .cover-header {
+            border-bottom: 4px solid #0052CC;
+            padding-bottom: 12px;
+            margin-bottom: 18px;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            background-color: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-radius: 6px;
+            padding: 10px 14px;
+            margin-bottom: 16px;
+            font-size: 9pt;
+        }
+
+        .meta-item { margin-bottom: 2px; }
+        .meta-label { font-weight: bold; color: #475569; }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 6px;
+            font-size: 7.5pt;
+            font-weight: 700;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .badge-success { background-color: #DCFCE7; color: #166534; }
+        .badge-warning { background-color: #FEF9C3; color: #854D0E; }
+        .badge-danger { background-color: #FEE2E2; color: #991B1B; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            margin-bottom: 14px;
+            font-size: 8.5pt;
+            page-break-inside: avoid;
+        }
+
+        th, td {
+            padding: 6px 8px;
+            text-align: left;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        th {
+            background-color: #0F172A;
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) { background-color: #F8FAFC; }
+
+        .callout {
+            background-color: #EFF6FF;
+            border-left: 4px solid #0052CC;
+            padding: 8px 12px;
+            margin-bottom: 14px;
+            border-radius: 0 4px 4px 0;
+            font-size: 9pt;
+        }
+
+        pre {
+            background-color: #0F172A;
+            color: #F8FAFC;
+            padding: 10px;
+            border-radius: 6px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-top: 6px;
+            margin-bottom: 12px;
+            font-family: 'Consolas', monospace;
+            font-size: 8pt;
+            page-break-inside: avoid;
+        }
+
+        .page-break { page-break-before: always; }
+    </style>
+</head>
+<body>
+
+    <div class="cover-header">
+        <h1>BETGUARD AI</h1>
+        <div style="font-size: 11pt; color: #0052CC; font-weight: 600;">
+            Real-Time Risk, Compliance & Fraud-Detection Architecture
+        </div>
+        <div style="font-size: 9.5pt; color: #64748B; margin-top: 2px;">
+            Technical Proposal & System Specification Document
+        </div>
+    </div>
+
+    <div class="meta-grid">
+        <div>
+            <div class="meta-item"><span class="meta-label">Prepared For:</span> Betway Botswana (Delta Bay Pty Ltd)</div>
+            <div class="meta-item"><span class="meta-label">Target Teams:</span> Risk, Technology, Fraud & Partnerships</div>
+            <div class="meta-item"><span class="meta-label">Submission Date:</span> September 16, 2026</div>
+        </div>
+        <div>
+            <div class="meta-item"><span class="meta-label">Prepared By:</span> BetGuard AI Engineering Team</div>
+            <div class="meta-item"><span class="meta-label">Version:</span> Prototype v2 Architecture Specification</div>
+            <div class="meta-item"><span class="meta-label">Target Latency SLA:</span> &lt; 150ms Execution Window</div>
+        </div>
+    </div>
+
+    <h2>1. Executive Summary</h2>
+    <p>
+        <strong>BetGuard AI</strong> is a specialized real-time risk, compliance, and fraud-detection engine designed specifically for online sports betting and gaming operators. Sitting between front-end web/mobile interfaces and core Player Account Management (PAM) databases, BetGuard AI evaluates user telemetry, betting patterns, device fingerprints, and financial actions in under <strong>150ms</strong>.
+    </p>
+
+    <div class="callout">
+        <strong>Core Value Deliverable:</strong> Reduces manual compliance review queues by up to <strong>60%</strong> while preventing bonus abuse, multi-accounting syndicates, and account takeover (ATO) attempts prior to payout execution.
+    </div>
+
+    <h2>2. Operational Capability Matrix</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Risk Vector</th>
+                <th>Detection Mechanism</th>
+                <th>Automated System Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Multi-Accounting & Syndicates</strong></td>
+                <td>Device canvas fingerprinting, cross-account hash correlation</td>
+                <td><span class="badge badge-danger">Hold for Review</span></td>
+            </tr>
+            <tr>
+                <td><strong>Account Takeover (ATO)</strong></td>
+                <td>Velocity anomaly checks, IP/ASN route switches, biometric shifts</td>
+                <td><span class="badge badge-warning">Challenge (2FA)</span></td>
+            </tr>
+            <tr>
+                <td><strong>Bonus Abuse & Arbitrage</strong></td>
+                <td>Real-time wager-to-deposit ratio tracking via Redis Sorted Sets</td>
+                <td><span class="badge badge-danger">Reject Bonus</span></td>
+            </tr>
+            <tr>
+                <td><strong>Standard Low-Risk Wagers</strong></td>
+                <td>Verified device hash, trusted IP profile, low composite risk score</td>
+                <td><span class="badge badge-success">Auto Pass</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>3. Architecture Overview</h2>
+    <p>
+        The platform utilizes an event-driven, microservices layout designed for high availability. It combines a deterministic rules engine with an <strong>XGBoost machine learning model compiled to ONNX runtime</strong>.
+    </p>
+
+    <pre>
+┌────────────────────────────────────────────────────────────────────────┐
+│                        Client & Edge Interface                         │
+│   (Web Frontend / iOS / Android App + BetGuard Telemetry SDK v2.1)     │
+└──────────────────────────────────┬─────────────────────────────────────┘
+                                   │ HTTPS / gRPC (Payload & Telemetry)
+                                   ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│                      Real-Time Scoring Engine                          │
+│     (ONNX Runtime + Redis 7.x In-Memory Velocity & Rule Matching)      │
+└──────────────────┬─────────────────────────────────────┬───────────────┘
+                   │ Synchronous Decision (<150ms)        │ Async Event Stream
+                   ▼                                     ▼
+┌───────────────────────────────────────┐ ┌──────────────────────────────┐
+│     Player Account Management (PAM)   │ │  ClickHouse Analytics Engine │
+│      (Approved / Challenged Flow)     │ │   (Offline Model Retraining) │
+└───────────────────────────────────────┘ └──────────────────────────────┘
+    </pre>
+
+    <div class="page-break"></div>
+
+    <h2>4. Dynamic Risk Tiering & Action Matrix</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Score Range</th>
+                <th>Risk Tier</th>
+                <th>Primary Action</th>
+                <th>System Behavior Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0 – 39</td>
+                <td><strong>LOW</strong></td>
+                <td><span class="badge badge-success">PASS</span></td>
+                <td>Transaction processed instantly without user friction.</td>
+            </tr>
+            <tr>
+                <td>40 – 74</td>
+                <td><strong>MEDIUM</strong></td>
+                <td><span class="badge badge-warning">CHALLENGE</span></td>
+                <td>Triggers step-up authentication (2FA) or additional document verification.</td>
+            </tr>
+            <tr>
+                <td>75 – 100</td>
+                <td><strong>HIGH / CRITICAL</strong></td>
+                <td><span class="badge badge-danger">HOLD_FOR_REVIEW</span></td>
+                <td>Transaction suspended; queued automatically in Analyst Dashboard.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>5. OpenAPI 3.0 API Specification Summary</h2>
+    <p>Primary scoring endpoint processes user telemetry and returns immediate recommendations:</p>
+
+    <h3>REST Endpoint: <code>POST /api/v2/evaluate</code></h3>
+    <pre>
+// Sample Request Payload
+{
+  "event_id": "evt_98f41c2a-7b3e-4e12-b91a-8c4391e0a2df",
+  "timestamp": "2026-09-16T08:00:00Z",
+  "event_type": "WITHDRAWAL_REQUEST",
+  "player": {
+    "account_id": "usr_bw_8839201",
+    "kyc_status": "VERIFIED_LEVEL_1"
+  },
+  "financials": {
+    "amount": 4500.00,
+    "currency": "BWP",
+    "payment_method": "MOBILE_MONEY"
+  },
+  "telemetry": {
+    "ip_address": "197.218.42.10",
+    "device_hash": "fp_8a7d1c9e04b2",
+    "vpn_detected": false
+  }
+}
+
+// Response Payload (< 150ms SLA)
+{
+  "event_id": "evt_98f41c2a-7b3e-4e12-b91a-8c4391e0a2df",
+  "risk_score": 82,
+  "risk_tier": "HIGH",
+  "action": "HOLD_FOR_REVIEW",
+  "latency_ms": 34
+}
+    </pre>
+
+    <h2>6. Official Submission Route</h2>
+    <p>
+        Official submission directed to Betway Botswana's designated operating and licensee channels:
+    </p>
+
+    <ul>
+        <li><strong>Primary Operator Channel:</strong> <code>support@betway.co.bw</code> <em>(Attn: Risk, Fraud, Technology & Partnerships Teams)</em></li>
+        <li><strong>Licensee Corporate Contact:</strong> <code>marketing@deltabay.co.bw</code> <em>(Delta Bay Proprietary Limited)</em></li>
+    </ul>
+
+    <div style="margin-top: 30px; border-top: 1px solid #CBD5E1; padding-top: 10px; font-size: 8pt; color: #64748B; text-align: center;">
+        BetGuard AI Infrastructure Specification Document &bull; Confidential &bull; Designed for Betway Botswana Integration
+    </div>
+
+</body>
+</html>
