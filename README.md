@@ -1,3 +1,4 @@
+<img src="logo.png" width="120">
 # BetGuard AI
 **🔗 Live demo:** [betguard-ai.../app](https://oganneleatilebaitsile-create.github.io/betguard-ai/app/) — try the review console directly, no download needed.
 
