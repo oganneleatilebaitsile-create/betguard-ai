@@ -1,77 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BetGuard AI — Review Console</title>Add logo to header and favicon
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+<img src="logo.png" width="120">
 
-  <header class="topbar">
-    <div class="brand">
-      <div class="brand-mark">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3FA88F" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06"/>
-          <path d="M15 19l2 2l4 -4"/>
-        </svg>
-      </div>
-      <div>
-        <h1 class="serif">BetGuard AI</h1>
-        <p class="tagline">Review console — account risk queue</p>
-      </div>
-    </div>
-    <div class="badge-live"><span class="dot"></span>Demo build</div>
-  </header>
+# BetGuard AI
 
-  <div class="disclaimer">
-    <strong>Fictional data only.</strong> Every account, name, and case on this page is invented for demonstration. Not connected to Betway, any real betting company, real accounts, payments, or real betting activity.
-  </div>
+**🔗 Live demo:** [betguard-ai.../app](https://oganneleatilebaitsile-create.github.io/betguard-ai/app/) — try the review console directly, no download needed.
 
-  <main class="wrap">
+A small, explainable risk-scoring engine for flagging account-level fraud
+patterns in online betting/gaming accounts — multi-accounting, bonus abuse,
+and irregular deposit activity — built as a learning project and portfolio
+piece.
 
-    <section class="stats-grid" id="stats-grid" aria-label="Dashboard statistics"></section>
+> **This is a demo built on invented, fictional data.** It is not connected
+> to Betway, any real betting company, real accounts, payments, or
+> real betting activity of any kind.
 
-    <section class="queue-section">
-      <div class="queue-header">
-        <div>
-          <h2 class="section-title">Review queue</h2>
-          <p class="section-sub">Fictional accounts, scored and sorted by risk.</p>
-        </div>
-      </div>
+## What it does
 
-      <div class="controls">
-        <input type="search" id="search-input" class="search-input" placeholder="Search by account ID or name…" aria-label="Search cases">
-        <select id="tier-filter" class="filter-select" aria-label="Filter by risk tier">
-          <option value="all">All tiers</option>
-          <option value="high">High risk</option>
-          <option value="medium">Moderate risk</option>
-          <option value="low">Low risk</option>
-        </select>
-        <select id="status-filter" class="filter-select" aria-label="Filter by status">
-          <option value="all">All statuses</option>
-          <option value="New">New</option>
-          <option value="In Review">In Review</option>
-          <option value="Escalated">Escalated</option>
-          <option value="Cleared">Cleared</option>
-        </select>
-      </div>
+Every account is scored against three signals:
 
-      <div id="queue-list" class="queue-list" role="list"></div>
-      <p id="empty-state" class="empty-state hidden">No cases match your search or filters.</p>
-    </section>
-  </main>
+| Signal                    | What it flags                                              |
+|----------------------------|-------------------------------------------------------------|
+| Shared device accounts     | Multiple accounts logging in from the same device           |
+| Bonus claims                | How many promo/free-bet offers an account has claimed        |
+| Deposit pattern             | Whether recent deposits break from the account's own history |
 
-  <div id="detail-overlay" class="detail-overlay hidden"></div>
-  <aside id="detail-panel" class="detail-panel hidden" aria-label="Case details">
-    <div id="detail-content"></div>
-  </aside>
+Those combine into a single 0–100 risk score, which maps to a tier:
 
-  <footer class="footer">
-    BetGuard AI is an educational prototype built on invented data. Scores, weights, and thresholds shown here are illustrative.<br>
-    Built by Oganne Baitsile — Francistown, Botswana.
-  </footer>
+| Score  | Tier      | Action                                              |
+|--------|-----------|------------------------------------------------------|
+| 0–29   | Low       | No action — continue normal monitoring               |
+| 30–59  | Moderate  | Flag for a closer look at the next natural touchpoint |
+| 60–100 | High      | Hold for manual review before approving bonuses/payouts |
 
-  <script src="app.js"></script>
-</body>
-  </html>
+## Project structure
