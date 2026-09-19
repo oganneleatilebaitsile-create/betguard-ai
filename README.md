@@ -1,5 +1,7 @@
 # BetGuard AI
 **🔗 Live demo:** [betguard-ai.../app](https://oganneleatilebaitsile-create.github.io/betguard-ai/app/) — try the review console directly, no download needed.
+
+A small, explainable risk-scoring engine for flagging account-level fraud patterns in online betting/gaming accounts — multi-accounting, bonus abuse, and irregular deposit activity — built as a learning project and portfolio piece.
 A small, explainable risk-scoring engine for flagging account-level fraud
 patterns in online betting/gaming accounts — multi-accounting, bonus abuse,
 and irregular deposit activity — built as a learning project and portfolio
